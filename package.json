@@ -1,0 +1,28 @@
+{
+  "name": "bullock_leather_works",
+  "version": "1.0.0",
+  "description": "Website for a Shoe and Clothing Brand",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-mongo": "^2.0.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.4.11",
+    "node-sass": "^4.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Bullock",
+    "Shoes",
+    "Clothes",
+    "Design",
+    "Shoemaker"
+  ],
+  "author": "Ekene Idiagbor",
+  "license": "ISC"
+}
