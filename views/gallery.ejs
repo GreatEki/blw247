@@ -38,6 +38,12 @@
           <li class="menu-items">
             <a href="/gallery"><i class="fab fa-envira "></i> Gallery</a>
           </li>
+          <li class="menu-items">
+              <a href="/shopping-cart"
+                ><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart
+                <span class="badge"><%= session.cart.totalQty %></span>
+              </a>
+            </li>
           <li class="menu-items"><a href="/contact"><i class="fas fa-envelope-square "></i> Contact</a></li>
         </ul>
       </nav>

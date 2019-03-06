@@ -515,6 +515,13 @@ span {
 .cust-satisfaction {
   margin-top: 50px;
 }
+
+/*Checkout Page Styling */
+.checkout {
+  width: 60%;
+  position: relative;
+  left: 25%;
+}
 /* Footer bottom-block footer-nav*/
 .bottom-block {
   width: 100%;

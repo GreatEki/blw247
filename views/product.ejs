@@ -39,6 +39,11 @@
             <a href="/gallery"><i class="fab fa-envira "></i> Gallery</a>
           </li>
           <li class="menu-items">
+            <a href="/shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart
+            <span class="badge"><%= session.cart.totalQty  %></span>
+            </a>
+          </li>
+          <li class="menu-items">
             <a href="/contact"
               ><i class="fas fa-envelope-square "></i> Contact</a
             >
@@ -130,7 +135,7 @@
         <h1>HOW TO ORDER:</h1>
 
         <p class="text">
-          To order the above product, please select the your shoe size from the
+          To order the above product, please select your shoe size from the
           drop-down list above.
         </p>
         <p class="text">
@@ -139,6 +144,7 @@
           >
           button
         </p>
+        <p class="text"><span class="text-danger">Please NOTE:</span> If you want to purchase a particular shoe in multiple quantities for different shoe sizes, you will have to do add them to your cart individually.</p>
         <p class="text">
           To order for more items, simply go back to the
           <span>"Gallery Page"</span> and select as many products as you wish to

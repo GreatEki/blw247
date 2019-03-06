@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Home</title>
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="/public/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -34,9 +40,11 @@
           </li>
           <li class="menu-items">
             <a href="/shopping-cart"
-              ><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart
-              <span class="badge"><%= session.cart.totalQty %></span>
-            </a>
+              ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart<span
+                class="badge"
+                ><%= session.cart.totalQty %></span
+              ></a
+            >
           </li>
           <li class="menu-items">
             <a href="/contact"
@@ -68,49 +76,57 @@
         </div>
       </div>
 
-      <div class="intro-info">
-        <h3>
-          At Bullock Leather Works(blw247) we believe that your feet is an
-          important part of the body as well as every other part as well. We are
-          a company that is structured to give you the best designs of leather
-          works that would suit all occasions from shoes, wallets, belts,
-          slippers and sandals.
-        </h3>
+      <% if (session.cart.totalQty == 0) { %>
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+          <h2>No Items in Cart</h2>
+        </div>
+      </div>
+      <% } %>
+
+      <% if (products) { %>
+      <div class="row">  
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+          <ul class="list-group">
+            <%  for(var i=0; i<session.cart.totalQty; i++) { %>
+            <li class="list-group-item">
+              <span class="badge"><%= [i].prodQty %></span>
+              <strong><%= cart[i].title %></strong>
+              <span class="label text-success"><%= cart[i].totalSize %></span>
+              <span class="label text-info"><%= cart[i].prodPrice %></span>
+              <div class="btn-group">
+                <button
+                  class="btn btn-primary btn-xs dropdown-toggle"
+                  type="button" data-toggle="dropdown-menu"
+                >
+                  Action<span class="caret"></span>
+                <ul class="dropdown-menu">
+                  <li><a href="">Reduce by 1</a></li>
+                  <li><a href="">Remove All</a></li>
+                </ul>
+              </button>
+              </div>
+            </li>
+            
+            <% } %>
+          </ul>
+        </div>
+      </div>
+      <% } %>
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+          <strong>Total: <%= totalPrice %> </strong>
+        </div>
+      </div>
+      <hr />
+
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+          <a href="/checkout" class="btn btn-success">CheckOut</a>
+        </div>
       </div>
 
-      <div class="buttons">
-        <div class="place-order">Place Your Order?</div>
-        <div class="place-order">Check-Out Our Gallery</div>
-      </div>
-
-      <div class="image-grid">
-        <img
-          id="img1"
-          class="home-images"
-          src="/public/images/black-mature.jpg"
-        />
-        <img
-          id="img2"
-          class="home-images"
-          src="/public/images/brownish-red-show.jpg"
-        />
-        <img
-          id="img3"
-          class="home-images"
-          src="/public/images/black-sweet-men.jpg"
-        />
-        <img id="img4" class="home-images" src="/public/images/blue-shoe.jpg" />
-        <img
-          id="img5"
-          class="home-images"
-          src="/public/images/purple-sandals.jpg"
-        />
-        <img
-          id="img6"
-          class="home-images"
-          src="/public/images/black-leather-shoe.jpg"
-        />
-      </div>
+      
     </main>
 
     <footer class="footer">

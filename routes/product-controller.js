@@ -3,15 +3,21 @@ const router = express.Router();
 var bodyParser = require("body-parser");
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var Product = require("../models/product");
+var User = require("../models/users");
 var Cart = require("../models/cart");
 
 //GET route for purchasing and displaying a singular product
 router.get("/:id", (req, res) => {
   Product.findById(req.params.id, function(err, product) {
     if (!err) {
-      return res.render("product", { product: product });
+      var cart = new Cart(req.session.cart ? req.session.cart : { items: {} });
+      req.session.cart = cart;
+      return res.render("product", {
+        product: product,
+        totalQty: cart.totalQty
+      });
     } else {
-      return res.json(500);
+      return res.json(404);
     }
   });
 });
@@ -33,10 +39,10 @@ router.get("/add-to-cart/:id", (req, res) => {
 });
 */
 
-//POST route for adding selected product to
+//POST route for adding selected product to Shopping Cart
 router.post("/add-to-cart/:id", urlencodedParser, (req, res) => {
   var productId = req.params.id;
-  var productQty = req.body.qty;
+  var productQty = Number(req.body.qty);
   var productSize = req.body.size;
 
   var cart = new Cart(req.session.cart ? req.session.cart : { items: {} });
@@ -45,10 +51,9 @@ router.post("/add-to-cart/:id", urlencodedParser, (req, res) => {
     if (err) {
       return res.json(404);
     }
-    cart.add(product, product.id, productQty);
+    cart.add(product, product.id, product.title, productQty, productSize);
     req.session.cart = cart;
     console.log(req.session.cart);
-    console.log(productSize);
     return res.redirect("/gallery");
   });
 });

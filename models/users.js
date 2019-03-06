@@ -8,7 +8,16 @@ var userSchema = new Schema({
   email: String,
   password: String,
   address: String,
-  phone_No: Number
+  phone_No: Number,
+  cart: [
+    {
+      prodTitle: String,
+      prodQty: Number,
+      size: String,
+      prodPrice: Number,
+      totalPrice: Number
+    }
+  ]
 });
 
 const User = mongoose.model("User", userSchema);
