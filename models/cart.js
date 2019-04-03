@@ -1,30 +1,26 @@
 module.exports = function Cart(oldCart) {
-  this.items = oldCart || {};
+  this.items = oldCart.items || {};
   this.title = oldCart.title || " ";
-  this.prodQty = oldCart.qty || 0;
   this.totalQty = oldCart.totalQty || 0;
-  this.prodPrice = oldCart.price || 0;
   this.totalPrice = oldCart.totalPrice || 0;
-  this.totalSize = oldCart.size || 0;
+  this.size = oldCart.size || 0;
 
-  this.add = function(product, id, title, qty, size) {
+  this.add = function(product, id, title, size) {
     var storedItem = this.items[id];
     if (!storedItem) {
       storedItem = this.items[id] = {
         product: product,
         title: title,
-        quantity: qty,
+        quantity: 0,
         size: size
       };
     }
-    //storedItem.quantity += qty;
-    this.prodQty = storedItem.quantity;
-    this.totalQty += storedItem.quantity;
-    this.title = storedItem.title;
-    storedItem.price = storedItem.product.price * qty;
-    this.prodPrice = storedItem.price;
-    this.totalPrice += storedItem.price;
-    this.totalSize = storedItem.size;
+    storedItem.quantity++;
+    this.totalQty++;
+    //this.title = storedItem.title;
+    storedItem.price = storedItem.product.price * storedItem.quantity;
+    this.totalPrice += storedItem.product.price;
+    //this.size = storedItem.size;
   };
   this.generateArray = function() {
     var arr = [];

@@ -42,16 +42,15 @@ router.get("/add-to-cart/:id", (req, res) => {
 //POST route for adding selected product to Shopping Cart
 router.post("/add-to-cart/:id", urlencodedParser, (req, res) => {
   var productId = req.params.id;
-  var productQty = Number(req.body.qty);
   var productSize = req.body.size;
 
-  var cart = new Cart(req.session.cart ? req.session.cart : { items: {} });
+  var cart = new Cart(req.session.cart ? req.session.cart : {} );
 
   Product.findById(productId, function(err, product) {
     if (err) {
       return res.json(404);
     }
-    cart.add(product, product.id, product.title, productQty, productSize);
+    cart.add(product, product.id, product.title, productSize);
     req.session.cart = cart;
     console.log(req.session.cart);
     return res.redirect("/gallery");

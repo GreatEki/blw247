@@ -58,7 +58,6 @@ router.get("/shopping-cart", (req, res) => {
   var cart = new Cart(req.session.cart);
   return res.render("shopping-cart", {
     products: cart.generateArray(),
-    cart: req.session.cart,
     totalPrice: cart.totalPrice
   });
 });
