@@ -6,7 +6,7 @@ var Product = require("../models/product");
 var User = require("../models/users");
 var Cart = require("../models/cart");
 
-//GET route for purchasing and displaying a singular product
+//GET route for purchasing and displaying a singular product chosen by the customer for purchase
 router.get("/:id", (req, res) => {
   Product.findById(req.params.id, function(err, product) {
     if (!err) {
@@ -21,23 +21,7 @@ router.get("/:id", (req, res) => {
     }
   });
 });
-/*
-router.get("/add-to-cart/:id", (req, res) => {
-  var productId = req.params.id;
 
-  var cart = new Cart(req.session.cart ? req.session.cart : { items: {} });
-
-  Product.findById(productId, function(err, product) {
-    if (err) {
-      return res.json(400).redirect("/");
-    }
-    cart.add(product, productId);
-    req.session.cart = cart;
-    console.log(req.session.cart);
-    return res.redirect("/gallery");
-  });
-});
-*/
 
 //POST route for adding selected product to Shopping Cart
 router.post("/add-to-cart/:id", urlencodedParser, (req, res) => {
@@ -50,7 +34,7 @@ router.post("/add-to-cart/:id", urlencodedParser, (req, res) => {
     if (err) {
       return res.json(404);
     }
-    cart.add(product, product.id, product.title, productSize);
+    cart.add(product, product.id, product.title, product.imagePath, productSize);
     req.session.cart = cart;
     console.log(req.session.cart);
     return res.redirect("/gallery");

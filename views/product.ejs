@@ -1,198 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0 maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Product</title>
-    <link rel="stylesheet" href="/public/css/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-      crossorigin="anonymous"
-    />
-  </head>
+
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
   <body>
-    <header class="header">
-      <div class="menu-btn">
-        <div id="ln1" class="btn-line"></div>
-        <div id="ln2" class="btn-line"></div>
-        <div id="ln3" class="btn-line"></div>
-      </div>
+    <header>
+        <div class="container-fluid m-0 p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-      <nav class="menu">
-        <ul class="menu-nav">
-          <li class="menu-items current">
-            <a href="/"><i class="fas fa-home"></i> Home</a>
-          </li>
-          <li class="menu-items">
-            <a href="/services"><i class="fas fa-wrench "></i> Service</a>
-          </li>
-          <li class="menu-items">
-            <a href="/gallery"><i class="fab fa-envira "></i> Gallery</a>
-          </li>
-          <li class="menu-items">
-            <a href="/shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart
-            <span class="badge"><%= session.cart.totalQty  %></span>
-            </a>
-          </li>
-          <li class="menu-items">
-            <a href="/contact"
-              ><i class="fas fa-envelope-square "></i> Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavBar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a href="" class="navbar-brand ml-3"><span>Bullock</span></a>
+
+                        <div class="collapse navbar-collapse"></div>
+                        <div class="collapse navbar-collapse ml-lg-5" id="mainNavBar">
+                            <ul class="navbar-nav ml-5">
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a href="/services" class="nav-link">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a href="/gallery" class="nav-link">Shop</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a href="" class="nav-link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
+                                        <span class="badge"><%= session.cart.totalQty %></span></a>
+                                </li>
+                                <li class="nav-item">
+                                        <a href="/contact" class="nav-link">Contact US</a>
+                                </li> 
+                            </ul>             
+                        </div>
+        
+                      <ul class="navbar-nav dropdown ml-lg-5 ml-3">
+                          <a href="" class="nav-link dropdown-toggle" id="navbarDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-user"></i>
+                          </a>
+        
+                          <div class="dropdown-menu" aria-labelledby="navbarDropDown">
+                            <a href="" class="dropdown-item">Sign-In</a>
+                            <a href="" class="dropdown-item">Sign-Up</a>
+                          </div>
+                      </ul>
+                        
+        
+                </nav>
+    </div>
+
+    <hr>
     </header>
+   
+    <main>
 
-    <main class="page-content">
-      <div class="top-page">
-        <img
-          src="/public/images/bullock-logo.jpg"
-          class="img-logo"
-          alt="the bull"
-        />
+      <div class="container mt-5">
+        <div class="title">---- Product</div>
 
-        <div class="top-side">
-          <h1 class="lg-heading">Bullock<small> Leather Works</small></h1>
-          <h3 class="sm-heading">Exquisitely Unique</h3>
-          <hr />
+        <p class="text">Exquisitely Unique Shoes that stands you out.</p>
 
-          <div class="icons">
-            <a href="#"><i class="fab fa-facebook fa-4x"></i></a>
-            <a href="#"><i class="fab fa-twitter fa-4x"></i></a>
-            <a href="#"><i class="fab fa-instagram fa-4x"></i></a>
+        <div class="row">
+          <div class="col-12 col-lg-8 offset-lg-2">
+
+            <div class="prod-display-details">
+              <img src="/<%= product.imagePath %>" alt="" class="prod-picture" />
+              <br /><br />
+              <h1><%= product.title %></h1>
+              <h3 name="price">N<%= product.price %></h3>
+      
+              <p class="text">
+                Read our <a href="#" class="link">"How to Order"</a> and policy on
+                <a href="#" class="link">"Delivery"</a> and
+                <a href="#" class="link">"Delivery time"</a>
+                to properly place your order or simply scroll down to Read.
+              </p>
+      
+              <form action="/product/add-to-cart/<%= product._id %>" method="POST">
+                
+                <h3>Select your Size:</h3>
+                <div class="form-group">
+                  <select class="form-control" name="size">
+                    <option value="size_32">Size 32</option>
+                    <option value="size_33">Size 33</option>
+                    <option value="size_34">Size 34</option>
+                    <option value="size_35">Size 35</option>
+                    <option value="size_36">Size 36</option>
+                    <option value="size_37">Size 37</option>
+                    <option value="size_38">Size 38</option>
+                    <option value="size_39">Size 39</option>
+                    <option value="size_40">Size 40</option>
+                    <option value="size_41">Size 41</option>
+                    <option value="size_42">Size 42</option>
+                    <option value="size_43">Size 43</option>
+                    <option value="size_44">Size 44</option>
+                    <option value="size_45">Size 45</option>
+                    <option value="size_46">Size 46</option>
+                    <option value="size_47">Size 47</option>
+                    <option value="size_48">Size 48</option>
+                  </select>
+                </div>
+      
+                <div>
+                  <p class="text">
+                    Enter the quantity you wish to purchase below:
+                  </p>
+                  <button role="button" type="submit" class="btn-primary btn-sm">
+                    Add to Cart
+                  </button>
+                </form>
+                  <br />
+                  <i>ADD TO WISHLIST</i>
+                </div>
+             
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="title">---- Product</div>
+     
 
-      <p class="text">Exquisitely Unique Shoes that stands you out.</p>
-
-      <div class="prod-display-details">
-        <img src="/<%= product.imagePath %>" alt="" class="prod-picture" />
-        <br /><br />
-        <h1><%= product.title %></h1>
-        <h3 name="price">N<%= product.price %></h3>
-
-        <p class="text">
-          Read our <a href="#" class="link">"How to Order"</a> and policy on
-          <a href="#" class="link">"Delivery"</a> and
-          <a href="#" class="link">"Delivery time"</a>
-          to properly place your order or simply scroll down to Read.
-        </p>
-
-        <form action="/product/add-to-cart/<%= product._id %>" method="POST">
-          
-          <h3>Select your Size:</h3>
-          <div class="form-group">
-            <select class="form-control" name="size">
-              <option value="size_32">Size 32</option>
-              <option value="size_33">Size 33</option>
-              <option value="size_34">Size 34</option>
-              <option value="size_35">Size 35</option>
-              <option value="size_36">Size 36</option>
-              <option value="size_37">Size 37</option>
-              <option value="size_38">Size 38</option>
-              <option value="size_39">Size 39</option>
-              <option value="size_40">Size 40</option>
-              <option value="size_41">Size 41</option>
-              <option value="size_42">Size 42</option>
-              <option value="size_43">Size 43</option>
-              <option value="size_44">Size 44</option>
-              <option value="size_45">Size 45</option>
-              <option value="size_46">Size 46</option>
-              <option value="size_47">Size 47</option>
-              <option value="size_48">Size 48</option>
-            </select>
-          </div>
-
-          <div>
-            <p class="text">
-              Enter the quantity you wish to purchase below:
-            </p>
-            <button role="button" type="submit" class="btn-primary btn-sm">
-              Add to Cart
-            </button>
-          </form>
+     
+        <div class="container">
+            <hr />
+            <div class="how-to-order">
+              <h1>HOW TO ORDER:</h1>
+      
+              <p class="text">
+                To order the above product, please select your shoe size from the
+                drop-down list above.
+              </p>
+              <p class="text">
+                Enter the quantity you wish to purchase, then click on the<span
+                  >"Add to Cart"</span
+                >
+                button
+              </p>
+              <p class="text"><span class="text-danger">Please NOTE:</span> If you want to purchase a particular shoe in multiple quantities for different shoe sizes, you will have to do add them to your cart individually.</p>
+              <p class="text">
+                To order for more items, simply go back to the
+                <span>"Gallery Page"</span> and select as many products as you wish to
+                purchase.
+              </p>
+              <p class="text">
+                After you must selected all items you intend to purchase,<span
+                  >Go to Cart Page</span
+                >
+                by clicking on the menu button, to see all items on your cart.
+              </p>
+      
+              <p class="text">
+                If satisfied with your cart, proceed to <span>CHECK OUT</span> and
+                fill out the form, make payment, once payment is confirmed, be sure to
+                get your items within stated delivery timeframe.
+              </p>
+            </div>
+      
+            <hr />
+      
             <br />
-            <i>ADD TO WISHLIST</i>
-          </div>
-       
-      </div>
+            <div class="cust-satisfaction">
+              <h1>CUSTOMER SATISFACTION</h1>
+              <br />
+              <ul class="list">
+                <li>We use the best quality leathers to produce our shoes.</li>
+                <li>You can be sure that our shoes are long-lasting.</li>
+                <li>
+                  We are in the business of satisfying all of our customers unique
+                  desires.
+                </li>
+                <li>
+                  Ensure that you know what you are ordering for before placing your
+                  order.
+                </li>
+                <li>
+                  If you have complaints or enquiries. Do no fail to contact us.
+                </li>
+                <li>
+                  Contact Information is available on our
+                  <a href="/contact" class="link">Contact Page</a>
+                </li>
+                <li>
+                  Our aim is to meet your expectations while providing a hassle free
+                  service.
+                </li>
+              </ul>
+            </div>
+        </div>
 
-      <hr />
-      <div class="how-to-order">
-        <h1>HOW TO ORDER:</h1>
-
-        <p class="text">
-          To order the above product, please select your shoe size from the
-          drop-down list above.
-        </p>
-        <p class="text">
-          Enter the quantity you wish to purchase, then click on the<span
-            >"Add to Cart"</span
-          >
-          button
-        </p>
-        <p class="text"><span class="text-danger">Please NOTE:</span> If you want to purchase a particular shoe in multiple quantities for different shoe sizes, you will have to do add them to your cart individually.</p>
-        <p class="text">
-          To order for more items, simply go back to the
-          <span>"Gallery Page"</span> and select as many products as you wish to
-          purchase.
-        </p>
-        <p class="text">
-          After you must selected all items you intend to purchase,<span
-            >Go to Cart Page</span
-          >
-          by clicking on the menu button, to see all items on your cart.
-        </p>
-
-        <p class="text">
-          If satisfied with your cart, proceed to <span>CHECK OUT</span> and
-          fill out the form, make payment, once payment is confirmed, be sure to
-          get your items within stated delivery timeframe.
-        </p>
-      </div>
-
-      <hr />
-
-      <br />
-      <div class="cust-satisfaction">
-        <h1>CUSTOMER SATISFACTION</h1>
-        <br />
-        <ul class="list">
-          <li>We use the best quality leathers to produce our shoes.</li>
-          <li>You can be sure that our shoes are long-lasting.</li>
-          <li>
-            We are in the business of satisfying all of our customers unique
-            desires.
-          </li>
-          <li>
-            Ensure that you know what you are ordering for before placing your
-            order.
-          </li>
-          <li>
-            If you have complaints or enquiries. Do no fail to contact us.
-          </li>
-          <li>
-            Contact Information is available on our
-            <a href="/contact" class="link">Contact Page</a>
-          </li>
-          <li>
-            Our aim is to meet your expectations while providing a hassle free
-            service.
-          </li>
-        </ul>
-      </div>
+    
     </main>
 
     <footer class="footer">
@@ -216,8 +221,11 @@
         </div>
       </div>
     </footer>
-  </body>
-  <script src="js\jquery-3.3.1.js"></script>
-  <script src="js/slide.js"></script>
-  <script src="/public/js/main.js"></script>
-</html>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+    </html>

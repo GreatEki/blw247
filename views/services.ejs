@@ -1,176 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0 maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Services</title>
-    <link rel="stylesheet" href="/public/css/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <div class="menu-btn">
-        <div id="ln1" class="btn-line"></div>
-        <div id="ln2" class="btn-line"></div>
-        <div id="ln3" class="btn-line"></div>
-      </div>
 
-      <nav class="menu">
-        <ul class="menu-nav">
-          <li class="menu-items current">
-            <a href="/"><i class="fas fa-home"></i> Home</a>
-          </li>
-          <li class="menu-items">
-            <a href="/services"><i class="fas fa-wrench "></i> Service</a>
-          </li>
-          <li class="menu-items">
-            <a href="/gallery"><i class="fab fa-envira "></i> Gallery</a>
-          </li>
-          <li class="menu-items">
-            <a href="/shopping-cart"
-              ><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart
-              <span class="badge"><%= session.cart.totalQty %></span>
-            </a>
-          </li>
-          <li class="menu-items">
-            <a href="/contact"
-              ><i class="fas fa-envelope-square "></i> Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    
+    <header>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-12 col-sm-4 col-lg-4 auto mx-xs-auto">
+
+                    <img src="/public/images/bullock-logo.jpg" alt="logo" class="logo">
+                </div>
+                <div class="col-12 col-sm-6 col-lg-8">
+                    <h1 class="lg-heading">Bullock<small>  Leather Works</small></h1>
+                    <h3 class="motto">Exquisitely Unique</h3>
+                </div>
+            </div>
+            
+        </div>
+        <hr>
+
+        <div class="container-fluid m-0 p-0">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavBar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <a href="" class="navbar-brand ml-3"><span>Bullock</span></a>
+
+                            <div class="collaps navbar-collapse"></div>
+                            <div class="collapse navbar-collapse ml-lg-5" id="mainNavBar">
+                                <ul class="navbar-nav ml-5">
+                                    <li class="nav-item">
+                                        <a href="/" class="nav-link">Home</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                            <a href="/service" class="nav-link">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                            <a href="/gallery" class="nav-link">Shop</a>
+                                    </li>
+                                    <li class="nav-item">
+                                            <a href="" class="nav-link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
+                                            <span class="badge"><%= session.cart.totalQty %></span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                            <a href="/contact" class="nav-link">Contact US</a>
+                                    </li> 
+                                </ul>             
+                            </div>
+            
+                          <ul class="navbar-nav dropdown ml-lg-5 ml-3">
+                              <a href="" class="nav-link dropdown-toggle" id="navbarDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fas fa-user"></i>
+                              </a>
+            
+                              <div class="dropdown-menu" aria-labelledby="navbarDropDown">
+                                <a href="" class="dropdown-item">Sign-In</a>
+                                <a href="" class="dropdown-item">Sign-Up</a>
+                              </div>
+                          </ul>
+                            
+            
+                    </nav>
+        </div>
+
+        <hr>
     </header>
 
-    <main class="page-content">
-      <div class="top-page">
-        <img
-          src="/public/images/bullock-logo.jpg"
-          class="img-logo"
-          alt="the bull"
-        />
 
-        <div class="top-side">
-          <h1 class="lg-heading">Bullock<small> Leather Works</small></h1>
-          <h3 class="sm-heading">Exquisitely Unique</h3>
-          <hr />
+    <main>
 
-          <div class="icons">
-            <a href="#"><i class="fab fa-facebook fa-4x"></i></a>
-            <a href="#"><i class="fab fa-twitter fa-4x"></i></a>
-            <a href="#"><i class="fab fa-instagram fa-4x"></i></a>
+        <div class="container my-5">
+            <h4 class="blockquote">
+            At Bullock Leather Works (blw247) we believe that you feet is an
+            important part of the body as well as every other part as well. But as
+            we all know it is our feet that take us to places where we engage in
+            whatever kind of business or pleasure we desire to partake in; so we
+            take in into consideration that the feet should be treated mindfully.
+            What you put on your feet is just as important as what you put inside
+            your body, so we are a company that is structured to give you the best
+            designs of leather works that would suit all occasions from shoes,
+            wallets, belts, slippers to sandals as well
+            </h4>
+
+        </div>   
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 offset-md-3">
+                    <img class="images" src="/public/images/black-leather-shoe-edited.jpg" alt="mature-men" />
+                </div>
+            </div>
+        </div>
+        
+        <div class="container my-5">
+            <p class="blockquote">
+                Our products are hand crafted here in the heart of Nigeria - Lagos
+                City,with materials that have been tested overtime. As a fashion brand
+                we believe in making our customers stand tall with a sense of
+                integrity poise and pride. As you indulge yourself in our products, we
+                encourage you to make better choices using made in Nigeria good
+                starting with blw247.
+            </p>   
+        </div>
+
+        <div class="container">
+          <div class="row">
+              <div class="col-md-4 offset-md-3">
+                  <img class="images" src="/public/images/purple-sandals.jpg" alt="mature-men" />
+              </div>
           </div>
+      </div>
+
+        <div class="container my-5">
+            <div class="row">
+            <div class="title">---- OUR PRODUCTS</div>
+              <div class="col-lg-8 offset-lg-2">
+                <div>
+                    <ul class="list-group mt-5">
+                        <li class="list-group-item font-weight-bolder">Shoes</li>
+                        <li class="list-group-item font-weight-bolder">Slippers</li>
+                        <li class="list-group-item font-weight-bolder">Sandals</li>
+                        <li class="list-group-item font-weight-bolder">Wallets</li>
+                        <li class="list-group-item font-weight-bolder">Purses</li>
+                        <li class="list-group-item font-weight-bolder">Earings</li>
+                        <li class="list-group-item font-weight-bolder">Keyholders</li>
+                        <li class="list-group-item font-weight-bolder">
+                            As long as it has to do with leather we would be sure to deliver the
+                            best of what you desire
+                        </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
         </div>
-      </div>
 
-      <div class="block-quote">
-        <h3>
-          At Bullock Leather Works (blw247) we believe that you feet is an
-          important part of the body as well as every other part as well. But as
-          we all know it is our feet that take us to places where we engage in
-          whatever kind of business or pleasure we desire to partake in; so we
-          take in into consideration that the feet should be treated mindfully.
-          What you put on your feet is just as important as what you put inside
-          your body,so we are a company that is structured to give you the best
-          designs of leather works that would suit all occasions from shoes,
-          wallets, belts, slippers to sandals as well
-        </h3>
-      </div>
-
-      <img
-        class="images"
-        src="/public/images/black-leather-shoe-edited.jpg"
-        alt="mature-men"
-      />
-
-      <div class="block-quote">
-        <h3>
-          Our products are hand crafted here in the heart of Nigeria - Lagos
-          City,with materials that have been tested overtime. As a fashion brand
-          we believe in making our customers stand tall with a sense of
-          integrity poise and pride. As you indulge yourself in our products, we
-          encourage you to make better choices using made in Nigeria good
-          starting with blw247.
-        </h3>
-      </div>
-
-      <img
-        class="images"
-        src="/public/images/purple-sandals.jpg"
-        alt="mature-men"
-      />
-
-      <div class="title">---- OUR PRODUCTS</div>
-
-      <div>
-        <ul class="list">
-          <li>Shoes</li>
-          <li>Slippers</li>
-          <li>Sandals</li>
-          <li>Wallets</li>
-          <li>Purses</li>
-          <li>Earings</li>
-          <li>Keyholders</li>
-          <li>
-            As long as it has to do with leather we would be sure to deliver the
-            best of what you desire
-          </li>
-        </ul>
-      </div>
-
-      <div class="buttons">
-        <div class="place-order"><a href="">Place Your Order?</a></div>
-        <div class="place-order">
-          <a href="/gallery">Check-Out Our Gallery</a>
+        <div class="container">
+            <div class="buttons">
+                    <a href="" class="place-order">Go-To-Shop</a>
+                    
+                    <a href="/gallery" class="place-order">Place Your Order</a>
+                </div>
         </div>
-      </div>
 
-      <div class="title">---- DELIVERY</div>
-
-      <div class="block-quote">
-        <h3>
-          Deliveries are based on when payment is made as we run a bespoke
-          company. 70% of the total amout is expected to be paid so we purchase
-          materials and start the selected product. Upon confirmsation of
-          payment delivery takes 10 working days starting from the day payment
-          is made. Please note that this is within Lagos.
-          <h3>
-            Deliveries outside Lagos require full payment of any selected
-            product and would take 15 working days to deliver. Please note that
-            delivery fees apply.
-          </h3>
-        </h3>
-      </div>
+        <div class="container mb-5">
+            <div class="title my-4">---- DELIVERY</div>
+                <p class="blockquote">
+                Deliveries are based on when payment is made as we run a bespoke
+                company. 70% of the total amout is expected to be paid so we purchase
+                materials and start the selected product. Upon confirmsation of
+                payment delivery takes 10 working days starting from the day payment
+                is made. Please note that this is within Lagos.
+                </p>
+                <p class="blockquote">
+                    Deliveries outside Lagos require full payment of any selected
+                    product and would take 15 working days to deliver. Please note that
+                    delivery fees apply.
+                </p>
+            </div>
+        </div>
     </main>
 
-    <footer class="footer">
-      <div class="bottom-block">
-        <p class="copyright">Copyright &copy; 2018</p>
-        <ul class="footer-nav">
-          <li>Home</li>
-          <li>Service</li>
-          <li>Gallery</li>
-          <li>Contact</li>
-          <li>How to Order</li>
-          <li>View Cart</li>
-          <li>Delivery Policy</li>
-          <li class="last-li">Return</li>
-        </ul>
-
-        <div class="foot-icons">
-          <a href="#"><i class="fab fa-facebook foot"></i></a>
-          <a href="#"><i class="fab fa-twitter foot"></i></a>
-          <a href="#"><i class="fab fa-instagram foot"></i></a>
+    <div class="container-fluid m-0 p-0 bg-dark">
+            <footer class="footer">
+                <div class="bottom-block">
+                  <p class="copyright">Copyright &copy; 2018</p>
+                  <ul class="footer-nav">
+                    <li>Home</li>
+                    <li>Service</li>
+                    <li>Gallery</li>
+                    <li>Contact</li>
+                    <li>How to Order</li>
+                    <li>View Cart</li>
+                    <li>Delivery Policy</li>
+                    <li class="last-li">Return</li>
+                  </ul>
+          
+                  <div class="foot-icons">
+                    <a href="#"><i class="fab fa-facebook foot"></i></a>
+                    <a href="#"><i class="fab fa-twitter foot"></i></a>
+                    <a href="#"><i class="fab fa-instagram foot"></i></a>
+                  </div>
+                </div>
+              </footer>
         </div>
-      </div>
-    </footer>
-  </body>
-  <script src="js\jquery-3.3.1.js"></script>
-  <script src="js/slide.js"></script>
-  <script src="/public/js/main.js"></script>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
 </html>

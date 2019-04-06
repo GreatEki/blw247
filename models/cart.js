@@ -1,17 +1,19 @@
 module.exports = function Cart(oldCart) {
   this.items = oldCart.items || {};
+  this.imagePath = oldCart.imagePath || " ";
   this.title = oldCart.title || " ";
   this.totalQty = oldCart.totalQty || 0;
   this.totalPrice = oldCart.totalPrice || 0;
   this.size = oldCart.size || 0;
 
-  this.add = function(product, id, title, size) {
+  this.add = function(product, id, title, imagePath, size) {
     var storedItem = this.items[id];
     if (!storedItem) {
       storedItem = this.items[id] = {
         product: product,
         title: title,
         quantity: 0,
+        imagePath: imagePath,
         size: size
       };
     }

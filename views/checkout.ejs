@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Product</title>
+    <title>Checkout</title>
     <link rel="stylesheet" href="/public/css/main.css" />
     <link
       rel="stylesheet"
@@ -20,61 +20,7 @@
     />
   </head>
   <body>
-    <header class="header">
-      <div class="menu-btn">
-        <div id="ln1" class="btn-line"></div>
-        <div id="ln2" class="btn-line"></div>
-        <div id="ln3" class="btn-line"></div>
-      </div>
-
-      <nav class="menu">
-        <ul class="menu-nav">
-          <li class="menu-items current">
-            <a href="/"><i class="fas fa-home"></i> Home</a>
-          </li>
-          <li class="menu-items">
-            <a href="/services"><i class="fas fa-wrench "></i> Service</a>
-          </li>
-          <li class="menu-items">
-            <a href="/gallery"><i class="fab fa-envira "></i> Gallery</a>
-          </li>
-          <li class="menu-items">
-            <a href="/shopping-cart"
-              ><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart
-              <span class="badge"><%= session.cart.totalQty %></span>
-            </a>
-          </li>
-          <li class="menu-items">
-            <a href="/contact"
-              ><i class="fas fa-envelope-square "></i> Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <main class="page-content">
-      <div class="top-page">
-        <img
-          src="/public/images/bullock-logo.jpg"
-          class="img-logo"
-          alt="the bull"
-        />
-
-        <div class="top-side">
-          <h1 class="lg-heading">Bullock<small> Leather Works</small></h1>
-          <h3 class="sm-heading">Exquisitely Unique</h3>
-          <hr />
-
-          <div class="icons">
-            <a href="#"><i class="fab fa-facebook fa-4x"></i></a>
-            <a href="#"><i class="fab fa-twitter fa-4x"></i></a>
-            <a href="#"><i class="fab fa-instagram fa-4x"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="title">---- CheckOut</div>
+    
 
       <div class="checkout">
         <form action="/checkout" method="POST" id="checkout-form">
