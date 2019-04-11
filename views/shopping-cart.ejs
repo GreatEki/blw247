@@ -15,58 +15,74 @@
 <body>
    
 
-    <main>
-        <header>
-            <div class="container-fluid m-0 p-0">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavBar">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-    
-                        <a href="" class="navbar-brand ml-3"><span>Bullock</span></a>
-    
-                            <div class="collapse navbar-collapse"></div>
-                            <div class="collapse navbar-collapse ml-lg-5" id="mainNavBar">
-                                <ul class="navbar-nav ml-5">
-                                    <li class="nav-item">
-                                        <a href="/" class="nav-link">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                            <a href="/services" class="nav-link">Services</a>
-                                    </li>
-                                    <li class="nav-item">
-                                            <a href="/gallery" class="nav-link">Shop</a>
-                                    </li>
-                                    <li class="nav-item active">
-                                            <a href="" class="nav-link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
-                                            <span class="badge"><%= session.cart.totalQty %></span></a>
-                                    </li>
-                                    <li class="nav-item">
-                                            <a href="/contact" class="nav-link">Contact US</a>
-                                    </li> 
-                                </ul>             
-                            </div>
-            
-                          <ul class="navbar-nav dropdown ml-lg-5 ml-3">
-                              <a href="" class="nav-link dropdown-toggle" id="navbarDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="fas fa-user"></i>
-                              </a>
-            
-                              <div class="dropdown-menu" aria-labelledby="navbarDropDown">
-                                <a href="" class="dropdown-item">Sign-In</a>
-                                <a href="" class="dropdown-item">Sign-Up</a>
-                              </div>
-                          </ul>
-                            
-            
-                    </nav>
+  <header>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-sm-4 col-lg-4 auto mx-xs-auto">
+
+                <img src="/public/images/bullock-logo.jpg" alt="logo" class="logo">
+            </div>
+            <div class="col-12 col-sm-6 col-lg-8">
+                <h1 class="lg-heading">Bullock<small>  Leather Works</small></h1>
+                <h3 class="motto">Exquisitely Unique</h3>
+            </div>
         </div>
-    
-        <hr>
-        </header>
+        
+    </div>
+    <hr>
+
+    <div class="container-fluid m-0 p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavBar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a href="" class="navbar-brand ml-3"><span>Bullock</span></a>
+
+                        <div class="collapse navbar-collapse"></div>
+                        <div class="collapse navbar-collapse ml-lg-5" id="mainNavBar">
+                            <ul class="navbar-nav ml-5">
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link">Home</a>
+                                </li>
+                                <li class="nav-item active">
+                                        <a href="/service" class="nav-link">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a href="/gallery" class="nav-link">Shop</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a href="" class="nav-link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
+                                        <span class="badge"><%= session.cart.totalQty %></span></a>
+                                </li>
+                                <li class="nav-item">
+                                        <a href="/contact" class="nav-link">Contact US</a>
+                                </li> 
+                            </ul>             
+                        </div>
+        
+                      <ul class="navbar-nav dropdown ml-lg-5 ml-3">
+                          <a href="" class="nav-link dropdown-toggle mr-5" id="navbarDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-user"></i>
+                          </a>
+        
+                          <div class="dropdown-menu" aria-labelledby="navbarDropDown">
+                            <a href="/users/login" class="dropdown-item">Sign-In</a>
+                            <a href="/users/signup" class="dropdown-item">Sign-Up</a>
+                          </div>
+                      </ul>
+                        
+        
+                </nav>
+    </div>
+
+    <hr>
+</header>
+
             
-     
+    <main>
       <div class="container mt-5">
 
           <h1 class="text-center">Your Cart</h1>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Profile</title>
+</head>
+
+<link rel="stylesheet" href="/public/css/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<body>
+  
+    <header>
+      <div class="container">
+          <div class="container mt-5">
+              <div class="row">
+                  <div class="col-12 col-sm-4 col-lg-4 auto mx-xs-auto">
+  
+                      <img src="/public/images/bullock-logo.jpg" alt="logo" class="logo">
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-8">
+                      <h1 class="lg-heading">Bullock<small>  Leather Works</small></h1>
+                      <h3 class="motto">Exquisitely Unique</h3>
+                  </div>
+              </div>
+              
+          </div>
+          
+      </div>
+      <hr>
+
+      <div class="container-fluid m-0 p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavBar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a href="" class="navbar-brand ml-3"><span>Bullock</span></a>
+
+                    <div class="collapse navbar-collapse"></div>
+                    <div class="collapse navbar-collapse ml-lg-5" id="mainNavBar">
+                        <ul class="navbar-nav ml-5">
+                            <li class="nav-item">
+                                <a href="/users/account" class="nav-link">My Account</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a href="/services" class="nav-link">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a href="/gallery" class="nav-link">Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a href="" class="nav-link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
+                                    <span class="badge"><%= session.cart.totalQty %></span></a>
+                            </li>
+                            <li class="nav-item">
+                                    <a href="/contact" class="nav-link">Contact US</a>
+                            </li> 
+                        </ul>             
+                    </div>
+    
+                  <div class="navbar-nav ml-lg-5 ml-3">
+                      <a href="/users/logout" class="nav-link  nav-item mr-2" role="button" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-user"> Log-Out</i>
+                      </a>
+                    </div>
+                    
+    
+            </nav>
+</div>
+
+<hr>
+
+    </header>
+
+
+    <main>
+  <div class="container my-5">
+        <h1 class="text-center">Profile</h1>
+    
+         
+  
+  </div>
+  </main>
+  
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+    </html>

@@ -203,6 +203,21 @@ p.text-center {
 .panel-footer {
     border-bottom: 2px solid darkgrey;
 }
+
+/* Login Page Styling*/
+.btn.btn-block {
+    height: 40px;
+    background-color: gold;
+    border-radius: 0%;
+}
+
+/* SignUp page Styling */
+.form-group label {
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: darkslategray;
+}
 /* Footer bottom-block footer-nav*/
 .bottom-block {
     width: 100%;
