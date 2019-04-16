@@ -63,17 +63,24 @@
                             </ul>             
                         </div>
         
-                      <ul class="navbar-nav dropdown ml-lg-5 ml-3">
-                          <a href="" class="nav-link dropdown-toggle mr-5" id="navbarDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <% if (login) { %>
+                          <a href="/users/logout" class="nav-link  nav-item mr-2" role="button" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-user"> Log-Out</i>
+                          </a>
+                       <% } else {  %>
+                      <ul class="navbar-nav dropdown ml-lg-5 mr-3">
+                          <a href="" class="nav-link dropdown-toggle mr-5" id="navbarDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
                               <i class="fas fa-user"></i>
                           </a>
-        
+
                           <div class="dropdown-menu" aria-labelledby="navbarDropDown">
-                            <a href="/users/login" class="dropdown-item">Sign-In</a>
-                            <a href="/users/signup" class="dropdown-item">Sign-Up</a>
-                          </div>
-                      </ul>
-                        
+                              
+                              <a href="/users/login" class="dropdown-item">Sign-In</a>
+                              <a href="/users/signup" class="dropdown-item">Sign-Up</a>
+                              </div>
+
+                          <%  } %>
+                    </ul>
         
                 </nav>
     </div>
@@ -86,6 +93,16 @@
       <div class="container mt-5">
 
           <h1 class="text-center">Your Cart</h1>
+
+          <% if (session.cart.totalQty == 0) { %>
+            <div class="row my-5">
+              <div class="col-sm-6 offset-sm-3">
+                <h3 class="text-center">No Items in Cart</h3>
+
+               <p class="text-center">Go to <a href="/gallery">Shop</a></p>
+              </div>
+            </div>
+            <% } %>
 
 
           <% if(products) { %>

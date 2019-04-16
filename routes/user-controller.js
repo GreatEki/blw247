@@ -11,13 +11,24 @@ let User = require("../models/users");
 
 
 
-//@GET ROUTER to Profile Page
+//@GET ROUTER to Profile Page 
+//PROTECTED ROUTE
 router.get("/profile", isLoggedIn, (req, res) => {
   res.render("users/profile");
 });
 
-router.use('/', notLoggedIn, function(req, res, next) {
-      return next();
+//@GET ROUTER for LogOut
+router.get("/logout", isLoggedIn, (req, res, next) => {
+  req.logout();
+  res.redirect("/users/login");
+  next();
+});
+
+
+
+
+router.use("/", notLoggedIn, (req, res, next) =>  {
+    next();
 });
 //@users/login Router to Load the Login Page
 router.get("/login", (req, res) => {
@@ -97,7 +108,7 @@ router.post("/signup", urlencodedParser, (req, res) => {
                     bcrypt.genSalt(10, function(err, salt) {
                       bcrypt.hash(newUser.password, salt, function(err, hash) {
                         if (err) {
-                          res.status(500).json("A server operation failed; Hashing Error");
+                          res.status(500).json("A server operation failed; ######## Error");
                         }
                         newUser.password = hash;
                         newUser.save(function(err) {
@@ -129,7 +140,7 @@ router.post("/signup", urlencodedParser, (req, res) => {
 
       User.findOne({email: username}, function(err, user){
           if (err) {
-              console.log(err)
+              res.status(500).json("Server error!!!!");
           }
           if (!user) {
               return done(null, false, {message: 'No User found'});
@@ -148,6 +159,13 @@ router.post("/signup", urlencodedParser, (req, res) => {
       });
   }));
 
+  passport.authenticate('local', {
+    successRedirect: '/users/profile',
+    failureRedirect: '/users/login',
+    failureFlash: true
+  })(req, res, next);
+});
+
 //Serialize User
 passport.serializeUser(function(user, done) {
   done(null, user.id);
@@ -160,22 +178,8 @@ passport.deserializeUser(function(id, done) {
   });
   });
 
+
   
-    passport.authenticate('local', {
-      successRedirect: '/users/profile',
-      failureRedirect: '/users/login',
-      failureFlash: true
-    })(req, res, next);
-  });
-
-
-  //@GET ROUTER for LogOut
-  router.get("/logout", (req, res, next) => {
-    req.logout();
-    res.redirect("/users/login");
-    next();
-  })
-
 
   //Methods for Route Protection
 function isLoggedIn(req, res, next) {

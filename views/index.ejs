@@ -61,18 +61,27 @@
                                 </ul>             
                             </div>
             
-                          <ul class="navbar-nav dropdown ml-lg-5 ml-3"> 
-                              <a href="" class="nav-link dropdown-toggle mr-5" id="navbarDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="fas fa-user"></i>
-                              </a>
+                          
             
-                              <div class="dropdown-menu" aria-labelledby="navbarDropDown">
-                                <a href="/users/login" class="dropdown-item">Sign-In</a>
-                                <a href="/users/signup" class="dropdown-item">Sign-Up</a>
-                              </div>
+                            <% if (login) { %>
+                                <a href="/users/logout" class="nav-link  nav-item mr-2" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-user"> Log-Out</i>
+                                </a>
+                             <% } else {  %>
+                            <ul class="navbar-nav dropdown ml-lg-5 mr-3">
+                                <a href="" class="nav-link dropdown-toggle mr-5" id="navbarDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                                    <i class="fas fa-user"></i>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropDown">
+                                    
+                                    <a href="/users/login" class="dropdown-item">Sign-In</a>
+                                    <a href="/users/signup" class="dropdown-item">Sign-Up</a>
+                                    </div>
+
+                                <%  } %>
+            
                           </ul>
-                            
-            
                     </nav>
         </div>
 
